@@ -14,6 +14,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author: qianzhiyong
  * @date: 2020/10/12 17:32
@@ -81,5 +84,13 @@ public class CustomController {
     @GetMapping("/addUpdate")
     public String addUpdate() {
         return "addUpdate success!";
+    }
+
+    @GetMapping("/heartbeat")
+    public Map<String, Object> heartBeat() {
+        Map<String, Object> resultMap = new HashMap<>(10);
+        resultMap.put("code", 0);
+        resultMap.put("message", "success");
+        return resultMap;
     }
 }
